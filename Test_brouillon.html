@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blue Body</title>
-    <link rel="stylesheet" href="test_brouillon.css">
+    <link rel="stylesheet" href="test_brouillon.css"> 
 </head>
 <body>
-    <div class="container ">
-        <div class="ocean blur"></div>
+    <div class="container">
+        <div class="ocean blur" id="coralarea"></div>
         <div class="human blur"></div>
-        <a href="#" class="Play">Play</a>
+        <a href="#" class="Play" id="playButton">Play</a>
+        
     </div>
-    
-    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let playButtonClicked = false;
+
+            // Play button logic
+            document.getElementById("playButton").addEventListener("click", () => {
+                const blurredElements = document.querySelectorAll(".blur");
+                blurredElements.forEach(element => element.classList.remove("blur"));
+
+                document.getElementById("playButton").style.display = "none";
+                playButtonClicked = true;
+
+            });
+
+            
+        });
+    </script>
 </body>
 </html>
