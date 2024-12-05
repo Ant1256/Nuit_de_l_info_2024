@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire.css">
+    <title>Formulaire de satisfaction.</title>
+    <style>
+        .dynamic-input {
+            font-size: 16px; /* Taille de la police */
+            padding: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            width: 50ch; /* Large au départ, mesuré en caractères (ch) */
+            transition: width 0.2s ease; /* Transition fluide pour le rétrécissement */
+            white-space: nowrap; /* Empêche les retours à la ligne dans l'input */
+        }
+    </style>
+</head>
+<body>
+    <!-- Input dynamique -->
+     <h2>Comment améliorer notre site ? Aidez nous à l'aide de remarques constructives...</h2>
+    <input 
+        type="text" 
+        class="dynamic-input" 
+        id="dynamicInput" 
+        placeholder="Entrez vos remarques ici (pas de remarques négatives stp ;-))" 
+    />
+    <button onclick="rediriger()">Envoyer !!!</button>
+
+    <script>
+        function rediriger() {
+            // Définir les deux pages possibles
+            const pages = ["echec.html", "",  "reussite.html"];
+
+            // Choisir une page au hasard
+            const pageChoisie = pages[Math.floor(Math.random() * pages.length)];
+
+            // Rediriger vers la page choisie
+            window.location.href = pageChoisie;
+        }
+    </script>
+
+    <script>
+        const input = document.getElementById('dynamicInput');
+
+        // Fonction pour ajuster la largeur dynamique
+        function ajusterLargeur() {
+            // Récupérer la longueur du texte (en caractères)
+            const longueurTexte = input.value.length;
+
+            // Largeur initiale maximale (en caractères)
+            const largeurInitiale = 75;
+
+            // Rétrécir l 'input tout en augmentant son nombre de colonnes
+            // Plus il y a de texte, plus la largeur diminue
+            const nouvelleLargeur = Math.max(largeurInitiale - longueurTexte, 10); // Minimum de 10
+            input.style.width = `${nouvelleLargeur}ch`; // Ajuste la largeur en fonction de la longueur
+
+            // Ajuster les colonnes (virtuellement en augmentant la longueur)
+            input.size = Math.min(longueurTexte + 1, 100); // Maximum de 100 colonnes
+        }
+
+        // Ajoute un écouteur d'événement
+        input.addEventListener('input', ajusterLargeur);
+
+        // Initialisation de la largeur
+        ajusterLargeur();
+    </script>
+    <p>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+        <br>
+        <br>
+        <br><br><br><br>
+    </p>
+</body>
+</html>
