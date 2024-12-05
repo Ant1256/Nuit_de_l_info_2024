@@ -1,0 +1,61 @@
+.container{
+    display: flex;
+    
+
+}
+
+.blur{
+    filter: blur(4px);
+}
+body{
+    overflow: hidden;
+    
+}
+
+.ocean{
+    border: 5px solid black;
+    border-right:10px solid white;
+    height: 1000px;
+    width: 50%;
+    background: linear-gradient(#37B7C3,#088395,#071952);
+}
+.human{
+    border: 5px solid black;
+    width: 50%;
+    background-color: #343131;
+    border-left: white;
+    
+}
+
+.Play{
+    position: absolute;
+    right: 44%;
+    top: 50%;
+    width: 50px;
+    background: linear-gradient(#FFF7D1, #FFECC8, #FFD09B);
+    border: 3px white solid;
+    border-radius: 5px;
+    height: 100px;
+    width: 190px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    font-size: 60px;
+    color: rgb(106, 106, 234);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.03s ease-in-out;
+    
+
+}
+
+.Play:hover{
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 20px;
+}
+
+.Play:active{
+    transform: scale(0.8);
+
+}
