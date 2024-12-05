@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    
+    height: 100vh;
 
 }
 
@@ -19,6 +19,9 @@ body{
     width: 50%;
     background: linear-gradient(#37B7C3,#088395,#071952);
 }
+
+
+
 .human{
     border: 5px solid black;
     width: 50%;
